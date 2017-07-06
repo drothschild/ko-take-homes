@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styles from './styles.css'
 
-const Results = () => (
-  <div className={styles.results} />
-)
+class Results extends Component {
+  render() {
+    return <ul className={styles.results} />
+  }
+}
 
 export default Results

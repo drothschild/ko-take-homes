@@ -6,7 +6,4 @@ import './_global.css'
 
 const omdbapiUrl = 'http://www.omdbapi.com/'
 
-render(
-  <App apiUrl={omdbapiUrl} movieData={movieData} />,
-  document.getElementById('app')
-)
+render(<App apiUrl={omdbapiUrl} movieData={movieData} />, document.getElementById('app'))

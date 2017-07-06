@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A list of movies Evan likes!",
   "scripts": {
-    "dev": "webpack-dev-server --hot --inline"
+    "dev": "webpack-dev-server --hot --inline",
+    "format": "prettier --write --single-quote=true --print-width=120 --parser=flow --tab-width=2 --semi=false \"src/**/*.{js, jsx}\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,8 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.0",
+    "eslint": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
     "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
