@@ -1,6 +1,6 @@
 build/assets
 node_modules
-
+*.bundle.js
 # misc
 .DS_Store
 .env

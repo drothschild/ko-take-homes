@@ -5,17 +5,27 @@ const assetsDir = path.join(buildDir, './assets')
 
 module.exports = {
   context: baseDir,
-  entry: './src/main.js',
+  API_KEY: '36ff4bcc',
+  entry: './src/main.jsx',
   output: {
     path: assetsDir,
     filename: 'bundle.js',
     publicPath: '/'
   },
+  presets: [
+    'react',
+    'env',
+    {
+      targets: {
+        browsers: 'last version'
+      }
+    }
+  ],
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.jsx?$/,
+        loader: 'babel-loader'
       },
       {
         test: /\.json$/,
@@ -23,16 +33,14 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap'
+        loader:
+          'style-loader!css-loader?modules=true&localIdentName=[name]__[local]___[hash:base64:5]&sourceMap'
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js'],
-    modulesDirectories: [
-      'shared',
-      'node_modules'
-    ]
+    extensions: ['', '.js', '.jsx'],
+    modulesDirectories: ['shared', 'node_modules']
   },
   devServer: {
     contentBase: buildDir,

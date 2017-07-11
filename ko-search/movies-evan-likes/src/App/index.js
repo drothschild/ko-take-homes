@@ -6,10 +6,12 @@ const App = ({ apiUrl, movieData }) =>
   <div className={styles.page}>
     <div className={styles.appDescription}>
       <h1 className={styles.title}>Movies Evan Likes!</h1>
-      <p className={styles.content}>Below is a (not) comprehensive list of movies that Evan really likes.</p>
+      <p className={styles.content}>
+        Below is a (not) comprehensive list of movies that Evan really likes.
+      </p>
     </div>
-    <Filters />
-    <Results />
+    <Filters movieData={movieData} />
+    <Results movieData={movieData} apiUrl={apiUrl} />
   </div>
 
 export default App

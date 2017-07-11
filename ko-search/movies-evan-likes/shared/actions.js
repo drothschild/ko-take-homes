@@ -1,0 +1,3 @@
+export const SET_SEARCH_FILTER = 'SET_SEARCH_FILTER'
+export const SET_DECADE_FILTER = 'SET_DECADE_FILTER'
+export const ADD_API_DATA = 'ADD_API_DATA'
