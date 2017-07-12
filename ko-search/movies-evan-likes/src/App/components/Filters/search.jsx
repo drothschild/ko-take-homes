@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setSearchFilter } from 'actionCreators'
+import { setSearchFilter } from '../Redux/actionCreators'
 
 import styles from './styles.css'
 

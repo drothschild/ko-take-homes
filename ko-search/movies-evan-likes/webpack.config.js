@@ -1,4 +1,5 @@
 const path = require('path')
+
 const baseDir = path.resolve(__dirname)
 const buildDir = path.join(baseDir, './build')
 const assetsDir = path.join(buildDir, './assets')

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { setDecadeFilter } from 'actionCreators'
+import { setDecadeFilter } from '../Redux/actionCreators'
 
 import styles from './styles.css'
 
@@ -44,4 +44,5 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
+export const Unwrapped = Decades
 export default connect(mapStateToProps, mapDispatchToProps)(Decades)

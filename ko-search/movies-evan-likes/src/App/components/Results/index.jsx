@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import styles from './styles.css'
-import MovieLineItem from './movieLineItem'
+import MovieLineItem from './MovieLineItem'
 
-const Results = ({ apiUrl, movieData, decadeFilter, searchFilter }) => {
+const Results = ({ movieData, decadeFilter, searchFilter }) => {
   const movieList = movieData
     .filter(movie => {
       const decade = parseInt(decadeFilter, 10)
@@ -15,20 +16,27 @@ const Results = ({ apiUrl, movieData, decadeFilter, searchFilter }) => {
           movie.title.toUpperCase().indexOf(searchFilter.toUpperCase()) >= 0)
       )
     })
-    .sort((a, b) => a.title - b.title)
+    .sort((a, b) => (a.title > b.title ? 1 : -1))
     .map(movie => {
-      const key = encodeURIComponent(movie.title + movie.year)
-      return (
-        <li key={key}>
-          <MovieLineItem movie={movie} id={key} apiUrl={apiUrl} />
-        </li>
-      )
+      const key = encodeURIComponent(movie.title.toLowerCase() + movie.year)
+      return <MovieLineItem movie={movie} key={key} id={key} />
     })
   return (
-    <ul className={styles.results}>
+    <ol className={styles.results}>
       {movieList}
-    </ul>
+    </ol>
   )
+}
+
+Results.propTypes = {
+  movieData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  decadeFilter: PropTypes.string,
+  searchFilter: PropTypes.string
+}
+
+Results.defaultProps = {
+  decadeFilter: 'all',
+  searchFilter: ''
 }
 
 const mapStateToProps = state => ({

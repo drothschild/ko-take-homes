@@ -1,12 +1,12 @@
 import React from 'react'
-import Decades from './decades'
-import Search from './search'
+import Decades from './Decades'
+import Search from './Search'
 import styles from './styles.css'
 
 const Filters = ({ movieData }) =>
   <div className={styles.filters}>
-    <Decades movies={movieData}  />
     <Search />
+    <Decades movies={movieData} />
   </div>
 
 export default Filters

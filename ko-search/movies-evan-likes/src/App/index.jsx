@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.css'
 import { Filters, Results } from './components'
 
-const App = ({ apiUrl, movieData }) =>
+const App = ({ movieData }) =>
   <div className={styles.page}>
     <div className={styles.appDescription}>
       <h1 className={styles.title}>Movies Evan Likes!</h1>
@@ -11,7 +11,7 @@ const App = ({ apiUrl, movieData }) =>
       </p>
     </div>
     <Filters movieData={movieData} />
-    <Results movieData={movieData} apiUrl={apiUrl} />
+    <Results movieData={movieData} />
   </div>
 
 export default App

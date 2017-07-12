@@ -1,1 +1,27 @@
+.filters {
+  display: block;
+  margin: 15px auto auto -0px;
+  padding: 0;
+  position: relative;
+}
 
+.search {
+  border-radius: 3px 0 0 3px;
+  padding: 5px 8px;
+  font: 14px;
+  vertical-align: middle;
+  width: 200px;
+}
+
+.decades {
+  background-position: -61px -216px;
+  border: medium none;
+  color: #999;
+  font: 11px Verdana, Arial, sans-serif;
+  height: 29px;
+  line-height: 25px;
+  margin-top: 0px;
+  padding: 3px 0 0 6px;
+  vertical-align: middle;
+  width: 138px;
+}

@@ -4,5 +4,10 @@
     "stage-0",
     "react",
     "react-hmre"
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+    }
 }
