@@ -43,5 +43,5 @@ const mapStateToProps = state => ({
   decadeFilter: state.decadeFilter,
   searchFilter: state.searchFilter
 })
-
+export const Unwrapped = Results
 export default connect(mapStateToProps)(Results)

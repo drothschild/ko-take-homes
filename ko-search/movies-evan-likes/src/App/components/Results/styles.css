@@ -1,6 +1,15 @@
 .results {
   list-style-type: decimal;
 }
+
+.results li {
+  cursor: pointer;
+}
+
+.results div {
+  cursor: default;
+}
+
 .results li:nth-child(odd) {
   background-color: #f6f6f5;
   border: #fff 1px solid;

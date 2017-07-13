@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getOMDBDetails, expandLine } from '../Redux/actionCreators'
-import styles from './styles.css'
 
 class MovieLineItem extends Component {
   componentDidMount() {
@@ -14,7 +14,7 @@ class MovieLineItem extends Component {
     let title
     let evanSays
     let expandFunction
-    if (this.props.imdbID) {
+    if (this.props.imdbID !== '') {
       title = (
         <a
           href={`https://www.imdb.com/title/${this.props.imdbID}`}
@@ -42,12 +42,33 @@ class MovieLineItem extends Component {
     }
 
     return (
-      <li className={styles.movieLineItem} onClick={expandFunction}>
+      /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+      <li onClick={expandFunction}>
         {title} ({movie.year}) {rating}
         {evanSays}
       </li>
     )
   }
+}
+
+MovieLineItem.propTypes = {
+  movie: PropTypes.objectOf(PropTypes.string).isRequired,
+  imdbID: PropTypes.string,
+  rating: PropTypes.string,
+  lineExpandedID: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  getOMDBData: PropTypes.func,
+  contractLine: PropTypes.func,
+  expandLine: PropTypes.func
+}
+
+MovieLineItem.defaultProps = {
+  imdbID: '',
+  rating: 'Unrated',
+  lineExpandedID: '',
+  getOMDBData: () => {},
+  contractLine: () => '',
+  expandLine: () => {}
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -70,4 +91,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     dispatch(expandLine(''))
   }
 })
+
+export const Unwrapped = MovieLineItem
 export default connect(mapStateToProps, mapDispatchToProps)(MovieLineItem)

@@ -9,7 +9,7 @@ export function setDecadeFilter(decadeFilter) {
   return { type: SET_DECADE_FILTER, payload: decadeFilter }
 }
 
-export function addOMDBData(omdbData) {
+function addOMDBData(omdbData) {
   return { type: ADD_OMDB_DATA, payload: omdbData }
 }
 

@@ -5,11 +5,19 @@
   "scripts": {
     "dev": "webpack-dev-server --hot --inline",
     "format": "./node_modules/.bin/prettier --write --single-quote=true --print-width=120 --parser=flow --tab-width=2 --semi=false \"**/*.{js, jsx}\" , **/**/*.{js,jsx} ",
-    "test": "jest"
+    "test": "jest",
+    "test update": "jest -u"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kofile/ko-take-home-solutions.git"
+  },
+  "jest": {
+    "cacheDirectory": "./cache",
+    "transform": {
+      ".*": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   },
   "author": "Evan Sherwood <evan@sherwood.io>",
   "license": "ISC",
@@ -24,7 +32,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.0",
     "eslint": "^4.2.0",
-    "eslint-config-airbnb": "15.0.1",
+    "eslint-config-airbnb": "15.0.2",
     "eslint-config-prettier": "^2.3.0",
     "eslint-config-react": "1.1.7",
     "eslint-loader": "1.7.1",
@@ -36,6 +44,9 @@
     "eslint-plugin-react": "^7.0.1",
     "json-loader": "^0.5.4",
     "prettier": "^1.5.2",
+    "react-addons-test-utils": "^15.6.0",
+    "react-dom": "^15.6.1",
+    "react-hot-loader": "next",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
@@ -43,14 +54,15 @@
   "dependencies": {
     "axios": "^0.15.3",
     "babel-jest": "^20.0.3",
-    "dotenv": "^4.0.0",
-    "fs": "^0.0.1-security",
+    "enzyme": "^2.9.1",
     "jest": "^20.0.4",
     "jest-cli": "^20.0.4",
+    "jest-css-modules": "^1.1.0",
+    "jest-serializer-enzyme": "^1.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
     "react-redux": "^5.0.5",
+    "react-router-dom": "^4.1.1",
     "react-test-renderer": "^15.6.1",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",

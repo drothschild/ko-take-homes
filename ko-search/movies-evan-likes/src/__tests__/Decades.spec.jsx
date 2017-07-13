@@ -1,9 +1,9 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import Decades from '../App/components/Filters/Decades'
+import { shallow } from 'enzyme'
+import { Unwrapped as UnwrappedDecades } from '../App/components/Filters/Decades'
+import movieData from '../movieData.json'
 
 test('Decades renders correctly', () => {
-  const component = renderer.create(<Decades />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot
+  const component = shallow(<UnwrappedDecades movieData={movieData} />)
+  expect(component).toMatchSnapshot()
 })
