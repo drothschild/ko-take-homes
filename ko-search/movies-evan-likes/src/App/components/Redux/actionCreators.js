@@ -46,6 +46,7 @@ export function getOMDBDetails(title, year, id) {
         dispatch(addOMDBData(dataWithID))
       })
       .catch(error => {
+        // I know console error's are frowned upon, but I think this one makes sense here.
         console.error('axios error', error)
       })
   }

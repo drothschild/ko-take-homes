@@ -9,9 +9,7 @@ I replaced HMRE with react-hot-loader because the former causes Jest to fail.
 
 ## Style
 
-I used the Airbnb style guide[https://github.com/airbnb/javascript] for the grammar and cofiguration and esLit
-
-I used the original directory structure, though it's not what I would use on my own. It's harder to indentify individual index.js files in the text editor, and it adds more complexity to a simple project. In addition Jest balked at modules in the Shared directory, so I didn't use it for the redux elements.
+I used the Airbnb style guide[https://github.com/airbnb/javascript] for the grammar and cofiguration and esLint.
 
 ## Misc
 
